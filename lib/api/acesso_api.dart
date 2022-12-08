@@ -5,7 +5,7 @@ import 'package:api_propia/model/pessoa.dart';
 import 'package:http/http.dart';
 
 class AcessoApi {
-  // String server = 'http://ec2-3-89-98-186.compute-1.amazonaws.com:8080';
+  // String server = 'http://ec2-3-89-98-186.compute-1.amazonaws.com:8080/';
   String server = 'http://localhost:8080';
 
   Future<List<Pessoa>> listaPessoas() async {

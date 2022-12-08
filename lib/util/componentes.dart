@@ -63,7 +63,7 @@ class Componentes {
     if (cor != null) {
       return Text(
         texto,
-        style: TextStyle(color: cor, fontSize: tamanho),
+        style: TextStyle(color: cor, fontSize: double.parse('$tamanho')),
       );
     } else {
       return Text(texto);
