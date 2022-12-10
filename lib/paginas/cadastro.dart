@@ -94,24 +94,26 @@ class _CadastroState extends State<Cadastro> {
       drawer: Componentes(context).criaDrawer(consulta, cidades,null,null),
       body: Form(
         key: formController,
-        child: Column(
-          children: [
-            Componentes(context)
-                .criaInputTexto(TextInputType.text, "ID", txtId, "ID", false),
-            Componentes(context).criaInputTexto(
-                TextInputType.text, "Nome", txtNome, "Informe o Nome"),
-            Componentes(context).criaInputTexto(
-                TextInputType.number, "Idade", txtIdade, "Informe a idade"),
-            Center(child: RadioSexo(controller: txtSexo)),
-            Center(child: ComboCidade(controller: txtCidade)),
-            Componentes(context).criaBotao(
-                formController,
-                txtId.text == "" ? cadastrar : alterar,
-                txtId.text == "" ? "Cadastrar" : "Alterar"),
-            txtId.text!=''?Componentes(context)
-                .criaBotao(formController,  abrirDialogo, "Excluir"):const SizedBox(height: 1,),
-          ],
-        ),
+        child: ListView(
+          children: [Column(
+            children: [
+              Componentes(context)
+                  .criaInputTexto(TextInputType.text, "ID", txtId, "ID", false),
+              Componentes(context).criaInputTexto(
+                  TextInputType.text, "Nome", txtNome, "Informe o Nome"),
+              Componentes(context).criaInputTexto(
+                  TextInputType.number, "Idade", txtIdade, "Informe a idade"),
+              Center(child: RadioSexo(controller: txtSexo)),
+              Center(child: ComboCidade(controller: txtCidade)),
+              Componentes(context).criaBotao(
+                  formController,
+                  txtId.text == "" ? cadastrar : alterar,
+                  txtId.text == "" ? "Cadastrar" : "Alterar"),
+              txtId.text!=''?Componentes(context)
+                  .criaBotao(formController,  abrirDialogo, "Excluir"):const SizedBox(height: 1,),
+            ],
+          ),
+        ]),
       ),
     );
   }
